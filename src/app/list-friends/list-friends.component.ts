@@ -60,4 +60,16 @@ export class ListFriendsComponent implements OnInit {
       imageUrl: `https://picsum.photos/789`,
     },
   ];
+
+  updateText(event: KeyboardEvent): void {
+    this.text += event.key;
+  }
+
+  nbAmi = 0;
+  text = '';
+  isClicked = false;
+  handleClick = (): void => {
+    this.isClicked = true;
+    this.nbAmi += 1;
+  };
 }

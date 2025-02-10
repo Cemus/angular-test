@@ -1,6 +1,14 @@
 <h1>List friends (interpolation)</h1>
-<button [disabled]="isDisabled">Ajouter un ami</button>
+<button [disabled]="isDisabled">
+  {{ isDisabled ? "Clique pas" : "Clique" }}
+</button>
+<button (click)="handleClick()">
+  {{ isClicked ? "Ami ajouté !" : "Ajouter un ami" }}
+</button>
 
+<h2>{{ nbAmi }} ami{{ nbAmi > 0 ? "s" : "" }} 🤝</h2>
+<h2>Votre texte :</h2>
+<p>{{ text }}</p>
 <div>
   <article *ngFor="let friend of friends">
     <app-one-friend [friend]="friend"></app-one-friend>
