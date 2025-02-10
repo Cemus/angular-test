@@ -5,3 +5,7 @@ section {
   box-shadow: 1em 1em #f0acf0;
   margin: 1rem;
 }
+
+img {
+  width: 10rem;
+}

@@ -24,6 +24,7 @@ export class ListFriendsComponent {
         const random = this.randomized(19, 58);
         return `${random.toString()} ans`;
       },
+      imageUrl: `https://picsum.photos/200`,
     },
     {
       name: 'Vanessa',
@@ -35,6 +36,7 @@ export class ListFriendsComponent {
         const random = this.randomized(19, 58);
         return `${random.toString()} ans`;
       },
+      imageUrl: `https://picsum.photos/456/`,
     },
     {
       name: 'Paul',
@@ -46,6 +48,7 @@ export class ListFriendsComponent {
         const random = this.randomized(19, 58);
         return `${random.toString()} ans`;
       },
+      imageUrl: `https://picsum.photos/789`,
     },
   ];
 }

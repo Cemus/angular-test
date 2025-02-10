@@ -5,4 +5,5 @@ export interface Friend {
   passions: string[];
   reputation: string;
   age: () => string;
+  imageUrl: string;
 }

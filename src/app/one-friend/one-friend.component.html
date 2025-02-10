@@ -1,4 +1,6 @@
 <section>
+  <img src="{{ friend.imageUrl }}" alt="{{ friend.name }}" />
+
   <h2>{{ friend.name }}</h2>
   <p>
     Age : <span>{{ friend.age() }}</span>
@@ -20,10 +22,4 @@
     Réputation : <span>{{ friend.reputation }}</span>
   </p>
   <hr />
-  <p>
-    xss ? :
-    <script>
-      alert("Hello XSS");
-    </script>
-  </p>
 </section>
