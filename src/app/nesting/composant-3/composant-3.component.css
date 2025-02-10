@@ -1,0 +1,9 @@
+p {
+  background-color: blueviolet;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
