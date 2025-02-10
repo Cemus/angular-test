@@ -10,14 +10,16 @@ import { CommonModule } from '@angular/common';
   styleUrl: './list-friends.component.css',
 })
 export class ListFriendsComponent implements OnInit {
-  randomized(min: number, max: number) {
-    return Math.floor(Math.random() * (max - min) + min);
-  }
-  isDisabled = false;
   ngOnInit(): void {
     setTimeout(() => {
       this.isDisabled = true;
     }, 3000);
+  }
+
+  isDisabled = false;
+
+  randomized(min: number, max: number) {
+    return Math.floor(Math.random() * (max - min) + min);
   }
 
   friends: Friend[] = [
