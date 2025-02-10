@@ -1,4 +1,6 @@
 <h1>List friends (interpolation)</h1>
-<div *ngFor="let friend of friends">
-  <app-one-friend [friend]="friend"></app-one-friend>
+<div>
+  <article *ngFor="let friend of friends">
+    <app-one-friend [friend]="friend"></app-one-friend>
+  </article>
 </div>
