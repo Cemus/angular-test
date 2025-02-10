@@ -19,4 +19,5 @@ button:hover {
 button[disabled] {
   background-color: rgb(65, 58, 58);
   font-style: italic;
+  cursor: not-allowed;
 }
