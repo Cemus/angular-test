@@ -1,0 +1,29 @@
+<article>
+  <h2>{{ friend.name }}</h2>
+  <p>
+    Age : <span>{{ friend.age() }}</span>
+  </p>
+  <p>
+    Status : <span>{{ friend.status }}</span>
+  </p>
+  <p>
+    bio : <span>{{ friend.bio }}</span>
+  </p>
+  <hr />
+  <p>Les passions de {{ friend.name }}:</p>
+  <ul>
+    <li *ngFor="let passion of friend.passions">{{ passion }}</li>
+  </ul>
+
+  <hr />
+  <p>
+    Réputation : <span>{{ friend.reputation }}</span>
+  </p>
+  <hr />
+  <p>
+    xss ? :
+    <script>
+      alert("Hello XSS");
+    </script>
+  </p>
+</article>
