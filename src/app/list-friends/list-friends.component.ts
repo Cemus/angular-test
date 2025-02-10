@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { OneFriendComponent } from '../one-friend/one-friend.component';
 import { Friend } from '../models/friend.interface';
 import { CommonModule } from '@angular/common';
@@ -9,10 +9,17 @@ import { CommonModule } from '@angular/common';
   templateUrl: './list-friends.component.html',
   styleUrl: './list-friends.component.css',
 })
-export class ListFriendsComponent {
+export class ListFriendsComponent implements OnInit {
   randomized(min: number, max: number) {
     return Math.floor(Math.random() * (max - min) + min);
   }
+  isDisabled = false;
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.isDisabled = true;
+    }, 3000);
+  }
+
   friends: Friend[] = [
     {
       name: 'Jean',

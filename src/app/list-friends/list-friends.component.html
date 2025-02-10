@@ -1,4 +1,6 @@
 <h1>List friends (interpolation)</h1>
+<button [disabled]="isDisabled">Bouton</button>
+
 <div>
   <article *ngFor="let friend of friends">
     <app-one-friend [friend]="friend"></app-one-friend>
