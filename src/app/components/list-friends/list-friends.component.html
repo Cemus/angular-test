@@ -5,16 +5,16 @@
 <hr />
 
 <h2>
-  {{ friendsService.friends.length }} ami{{
-    friendsService.friends.length > 0 ? "s" : ""
+  {{ PeopleService.friends.length }} ami{{
+    PeopleService.friends.length > 0 ? "s" : ""
   }}
   🤝
 </h2>
 <input type="text" [(ngModel)]="textInput" />
 <br />
 <p *ngIf="newlyAddedFriend.length === 0; else newFriend">
-  Vous avez {{ friendsService.friends.length }} ami{{
-    friendsService.friends.length > 1 ? "s" : ""
+  Vous avez {{ PeopleService.friends.length }} ami{{
+    PeopleService.friends.length > 1 ? "s" : ""
   }}
 </p>
 <ng-template #newFriend>Vous avez ajouté {{ newlyAddedFriend }}</ng-template>
@@ -24,7 +24,7 @@
 </button>
 
 <div>
-  <article *ngFor="let friend of friendsService.friends">
+  <article *ngFor="let friend of PeopleService.friends">
     <app-one-friend [friend]="friend"></app-one-friend>
   </article>
 </div>

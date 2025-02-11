@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FriendsService } from '../friends.service'; // Import du service
 import { OneFriendComponent } from '../one-friend/one-friend.component';
 import { NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { PeopleService } from '../../services/friends/people.service';
 
 @Component({
   selector: 'app-list-friends',
@@ -17,7 +17,7 @@ export class ListFriendsComponent implements OnInit {
   isClicked = false;
   newlyAddedFriend = '';
 
-  constructor(public friendsService: FriendsService) {}
+  constructor(public PeopleService: PeopleService) {}
 
   ngOnInit(): void {
     setTimeout(() => {
@@ -27,7 +27,7 @@ export class ListFriendsComponent implements OnInit {
 
   handleClick = (): void => {
     if (this.textInput) {
-      this.friendsService.addFriend(this.textInput);
+      this.PeopleService.add(this.textInput);
       this.isClicked = true;
       this.newlyAddedFriend = this.textInput;
       this.textInput = '';

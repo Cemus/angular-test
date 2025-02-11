@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Friend } from '../models/friend.interface';
+import { Friend } from '../../models/friend.interface';
 import { NgClass, NgFor, NgStyle } from '@angular/common';
 
 @Component({
