@@ -1,0 +1,7 @@
+<label for="input">Nom d'utilisateur :</label>
+<br />
+<input type="text" id="input" [(ngModel)]="text" />
+<br />
+<br />
+<p id="read">{{ text }}</p>
+<button (click)="resetText()" [disabled]="text.length === 0">Reset</button>
