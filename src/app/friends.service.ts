@@ -9,7 +9,7 @@ export class FriendsService {
   friends: Friend[] = [
     {
       name: 'Jean',
-      status: 'En ligne',
+      online: true,
       bio: 'Blablablablablabla',
       passions: ['Ballon rond', 'Jeu de rôle japonais', 'La lessive'],
       reputation: 'Cool',
@@ -18,7 +18,7 @@ export class FriendsService {
     },
     {
       name: 'Vanessa',
-      status: 'Hors ligne',
+      online: true,
       bio: 'Blablablablablabla',
       passions: ['Les chiens', 'Les chats', 'Les rats'],
       reputation: 'Sereine',
@@ -27,7 +27,7 @@ export class FriendsService {
     },
     {
       name: 'Paul',
-      status: 'Hors ligne',
+      online: true,
       bio: 'Blablablablablabla',
       passions: ['La tarte', 'Les bardes', 'Les barques'],
       reputation: 'Dur',
@@ -39,7 +39,7 @@ export class FriendsService {
   addFriend(name: string): void {
     this.friends.push({
       name: name,
-      status: 'Hors ligne',
+      online: true,
       bio: 'Blablablablablabla',
       passions: ['Le néant'],
       reputation: 'Sereine',

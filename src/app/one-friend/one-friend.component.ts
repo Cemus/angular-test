@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Friend } from '../models/friend.interface';
 import { NgClass, NgFor, NgStyle } from '@angular/common';
 
@@ -8,18 +8,16 @@ import { NgClass, NgFor, NgStyle } from '@angular/common';
   templateUrl: './one-friend.component.html',
   styleUrl: './one-friend.component.css',
 })
-export class OneFriendComponent {
+export class OneFriendComponent implements OnInit {
   @Input() friend!: Friend;
 
-  oneFriendStyle = 'OFF';
-
-  constructor() {
+  ngOnInit(): void {
     Math.random() < 0.5
-      ? (this.oneFriendStyle = 'OFF')
-      : (this.oneFriendStyle = 'ON');
+      ? (this.friend.online = false)
+      : (this.friend.online = true);
   }
 
   getColor() {
-    return this.oneFriendStyle === 'ON' ? '#EC7C26' : '#A2231D';
+    return this.friend.online === true ? 'green' : 'red';
   }
 }

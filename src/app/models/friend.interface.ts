@@ -1,6 +1,6 @@
 export interface Friend {
   name: string;
-  status: string;
+  online: boolean;
   bio: string;
   passions: string[];
   reputation: string;
