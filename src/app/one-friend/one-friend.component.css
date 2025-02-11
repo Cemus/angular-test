@@ -14,3 +14,10 @@ section {
 img {
   width: 10rem;
 }
+
+.amiOn {
+  color: chartreuse;
+}
+.amiOff {
+  color: violet;
+}

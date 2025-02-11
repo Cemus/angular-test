@@ -1,7 +1,9 @@
-<section>
+<section [ngStyle]="{ backgroundColor: getColor() }">
   <img src="{{ friend.imageUrl }}" alt="{{ friend.name }}" />
 
-  <h2>{{ friend.name }}</h2>
+  <h2 [ngClass]="oneFriendStyle === 'ON' ? 'amiOn' : 'amiOff'">
+    {{ friend.name }}
+  </h2>
   <p>
     Age : <span>{{ friend.age }}</span>
   </p>

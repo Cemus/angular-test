@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FriendsService } from '../friends.service'; // Import du service
 import { OneFriendComponent } from '../one-friend/one-friend.component';
-import { NgIf } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-list-friends',
   standalone: true,
-  imports: [NgIf, OneFriendComponent, FormsModule],
+  imports: [NgIf, NgFor, OneFriendComponent, FormsModule],
   templateUrl: './list-friends.component.html',
   styleUrls: ['./list-friends.component.css'],
 })
@@ -16,6 +16,7 @@ export class ListFriendsComponent implements OnInit {
   textInput = '';
   isClicked = false;
   newlyAddedFriend = '';
+
   constructor(public friendsService: FriendsService) {}
 
   ngOnInit(): void {
