@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "github-build": "ng build --configuration production --base-href=/angular-test/",
-    "github-deploy": "npx angular-cli-ghpages --dir=dist/angular-test/browser --no-silent"
+    "github-deploy": "npx angular-cli-ghpages --dir=dist/angular-test/browser --no-silent",
+    "github-total": "npm run github-build | npm run github-deploy"
   },
   "private": true,
   "dependencies": {
