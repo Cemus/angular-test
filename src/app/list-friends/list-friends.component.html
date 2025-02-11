@@ -2,17 +2,29 @@
 <button [disabled]="isDisabled">
   {{ isDisabled ? "Clique pas" : "Clique" }}
 </button>
-<button (click)="handleClick()">
+<hr />
+
+<h2>
+  {{ friendsService.friends.length }} ami{{
+    friendsService.friends.length > 0 ? "s" : ""
+  }}
+  🤝
+</h2>
+<input type="text" [(ngModel)]="textInput" />
+<br />
+<p *ngIf="newlyAddedFriend.length === 0; else newFriend">
+  Vous avez {{ friendsService.friends.length }} ami{{
+    friendsService.friends.length > 1 ? "s" : ""
+  }}
+</p>
+<ng-template #newFriend>Vous avez ajouté {{ newlyAddedFriend }}</ng-template>
+<br />
+<button [disabled]="!textInput" (click)="handleClick()">
   {{ isClicked ? "Ami ajouté !" : "Aucun ami" }}
 </button>
 
-<h2>{{ nbAmi }} ami{{ nbAmi > 0 ? "s" : "" }} 🤝</h2>
-<h2>Ecrire :</h2>
-<input (input)="onInputChange($event)" placeholder="Tapez un texte" />
-<h2>Resultat :</h2>
-<p>{{ textInput }}</p>
 <div>
-  <article *ngFor="let friend of friends">
+  <article *ngFor="let friend of friendsService.friends">
     <app-one-friend [friend]="friend"></app-one-friend>
   </article>
 </div>

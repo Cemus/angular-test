@@ -1,74 +1,36 @@
 import { Component, OnInit } from '@angular/core';
+import { FriendsService } from '../friends.service'; // Import du service
+import { Friend } from '../models/friend.interface'; // Import du type Friend
 import { OneFriendComponent } from '../one-friend/one-friend.component';
-import { Friend } from '../models/friend.interface';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-list-friends',
-  imports: [CommonModule, OneFriendComponent],
+  standalone: true,
+  imports: [CommonModule, OneFriendComponent, FormsModule],
   templateUrl: './list-friends.component.html',
-  styleUrl: './list-friends.component.css',
+  styleUrls: ['./list-friends.component.css'],
 })
 export class ListFriendsComponent implements OnInit {
+  isDisabled = false;
+  textInput = '';
+  isClicked = false;
+  newlyAddedFriend = '';
+  constructor(public friendsService: FriendsService) {}
+
   ngOnInit(): void {
     setTimeout(() => {
       this.isDisabled = true;
     }, 3000);
   }
 
-  isDisabled = false;
-
-  randomized(min: number, max: number) {
-    return Math.floor(Math.random() * (max - min) + min);
-  }
-
-  friends: Friend[] = [
-    {
-      name: 'Jean',
-      status: 'En ligne',
-      bio: 'Blablablablablabla',
-      passions: ['Ballon rond', 'Jeu de rôle japonais', 'La lessive'],
-      reputation: 'Cool',
-      age: (): string => {
-        const random = this.randomized(19, 58);
-        return `${random.toString()} ans`;
-      },
-      imageUrl: `https://picsum.photos/200`,
-    },
-    {
-      name: 'Vanessa',
-      status: 'Hors ligne',
-      bio: 'Blablablablablabla',
-      passions: ['Les chiens', 'Les chats', 'Les rats'],
-      reputation: 'Sereine',
-      age: (): string => {
-        const random = this.randomized(19, 58);
-        return `${random.toString()} ans`;
-      },
-      imageUrl: `https://picsum.photos/456/`,
-    },
-    {
-      name: 'Paul',
-      status: 'Hors ligne',
-      bio: 'Blablablablablabla',
-      passions: ['La tarte', 'Les bardes', 'Les barques'],
-      reputation: 'Dur',
-      age: (): string => {
-        const random = this.randomized(19, 58);
-        return `${random.toString()} ans`;
-      },
-      imageUrl: `https://picsum.photos/789`,
-    },
-  ];
-  onInputChange(e: Event) {
-    const inputElement = e.target as HTMLInputElement;
-    this.textInput = inputElement.value;
-  }
-  nbAmi = 0;
-  textInput = '';
-  isClicked = false;
   handleClick = (): void => {
-    this.isClicked = true;
-    this.nbAmi += 1;
+    if (this.textInput) {
+      this.friendsService.addFriend(this.textInput);
+      this.isClicked = true;
+      this.newlyAddedFriend = this.textInput;
+      this.textInput = '';
+    }
   };
 }

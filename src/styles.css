@@ -5,6 +5,13 @@ body {
   padding: 0;
 }
 
+app-root {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+}
+
 header {
   background-color: #333;
   color: white;
@@ -31,9 +38,6 @@ footer {
   color: white;
   text-align: center;
   padding: 1rem;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
 }
 
 main {
@@ -43,4 +47,8 @@ main {
 section {
   max-width: 800px;
   margin: 0 auto;
+}
+
+a {
+  user-select: none;
 }

@@ -4,6 +4,6 @@ export interface Friend {
   bio: string;
   passions: string[];
   reputation: string;
-  age: () => string;
+  age: number;
   imageUrl: string;
 }
