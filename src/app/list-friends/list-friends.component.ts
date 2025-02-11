@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FriendsService } from '../friends.service'; // Import du service
 import { OneFriendComponent } from '../one-friend/one-friend.component';
-import { CommonModule, NgIf } from '@angular/common';
+import { NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
