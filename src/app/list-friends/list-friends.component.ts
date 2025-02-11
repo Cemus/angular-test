@@ -60,13 +60,12 @@ export class ListFriendsComponent implements OnInit {
       imageUrl: `https://picsum.photos/789`,
     },
   ];
-
-  updateText(event: KeyboardEvent): void {
-    this.text += event.key;
+  onInputChange(e: Event) {
+    const inputElement = e.target as HTMLInputElement;
+    this.textInput = inputElement.value;
   }
-
   nbAmi = 0;
-  text = '';
+  textInput = '';
   isClicked = false;
   handleClick = (): void => {
     this.isClicked = true;

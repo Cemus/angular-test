@@ -3,12 +3,14 @@
   {{ isDisabled ? "Clique pas" : "Clique" }}
 </button>
 <button (click)="handleClick()">
-  {{ isClicked ? "Ami ajouté !" : "Ajouter un ami" }}
+  {{ isClicked ? "Ami ajouté !" : "Aucun ami" }}
 </button>
 
 <h2>{{ nbAmi }} ami{{ nbAmi > 0 ? "s" : "" }} 🤝</h2>
-<h2>Votre texte :</h2>
-<p>{{ text }}</p>
+<h2>Ecrire :</h2>
+<input (input)="onInputChange($event)" placeholder="Tapez un texte" />
+<h2>Resultat :</h2>
+<p>{{ textInput }}</p>
 <div>
   <article *ngFor="let friend of friends">
     <app-one-friend [friend]="friend"></app-one-friend>
