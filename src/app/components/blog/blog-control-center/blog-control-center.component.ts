@@ -29,13 +29,9 @@ export class BlogControlCenterComponent {
       type: 'brouillon',
     },
   ];
-  drafts: Article[] = [];
 
   onArticleAdded(articleData: { article: Article }) {
     const document = articleData.article;
-
-    document.type === 'article'
-      ? this.articles.push(document)
-      : this.drafts.push(document);
+    this.articles.push(document);
   }
 }
