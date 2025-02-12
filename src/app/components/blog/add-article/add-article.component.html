@@ -1,0 +1,40 @@
+<h2>Formulaire</h2>
+<form action="">
+  <div>
+    <label for="title">Titre de l'article</label>
+    <br />
+    <input
+      type="text"
+      id="title"
+      placeholder="Votre titre"
+      name="title"
+      [(ngModel)]="title"
+    />
+  </div>
+
+  <div>
+    <label for="author">Auteur</label>
+    <br />
+    <input
+      type="text"
+      id="author"
+      placeholder="Auteur"
+      name="author"
+      [(ngModel)]="author"
+    />
+  </div>
+
+  <div>
+    <label for="content">Contenu</label>
+    <br />
+    <textarea
+      name="content"
+      id="content"
+      name="content"
+      [(ngModel)]="content"
+    ></textarea>
+  </div>
+
+  <button type="button" (click)="addArticle()">Ajouter article</button>
+  <button (click)="addDraft()">AjouterBrouillon</button>
+</form>

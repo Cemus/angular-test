@@ -1,0 +1,11 @@
+<h3>Article</h3>
+<article [ngClass]="article.type === 'draft' ? 'draft' : ''">
+  <header>
+    <h4>{{ article.title }}</h4>
+    <time>{{ article.date }}</time>
+  </header>
+  <p>{{ article.content }}</p>
+  <footer>
+    <address>{{ article.author }}</address>
+  </footer>
+</article>

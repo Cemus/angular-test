@@ -12,10 +12,17 @@ app-root {
   height: 100vh;
 }
 
-header {
-  background-color: #333;
-  color: white;
-  padding: 1rem;
+main {
+  padding: 2rem;
+}
+
+section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+a {
+  user-select: none;
 }
 
 header nav ul {
@@ -31,24 +38,4 @@ header nav ul li {
 header nav ul li a {
   color: white;
   text-decoration: none;
-}
-
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-}
-
-main {
-  padding: 2rem;
-}
-
-section {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-a {
-  user-select: none;
 }

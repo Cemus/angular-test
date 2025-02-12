@@ -1,0 +1,5 @@
+<app-add-article (articleCreated)="onArticleAdded($event)"></app-add-article>
+<app-article-element
+  *ngFor="let article of articles.reverse()"
+  [article]="article"
+></app-article-element>

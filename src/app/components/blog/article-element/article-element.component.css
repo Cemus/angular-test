@@ -1,0 +1,19 @@
+header {
+  background-color: rgba(104, 238, 238, 0.658);
+  padding: 1rem;
+}
+
+article {
+  background-color: rgba(104, 238, 238, 0.658);
+  border-radius: 0.2rem;
+  padding: 1rem;
+}
+
+.draft {
+  background-color: rgba(210, 224, 224, 0.658);
+}
+
+footer {
+  margin-top: 1rem;
+  text-align: end;
+}
