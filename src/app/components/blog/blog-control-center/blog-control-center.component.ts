@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AddArticleComponent } from '../add-article/add-article.component';
 import { ArticleElementComponent } from '../article-element/article-element.component';
 import { NgFor } from '@angular/common';
-import { BlogService } from '../../../services/blog/blog.service';
 import { Article } from '../../../models/article.interface';
 
 @Component({
@@ -12,26 +11,29 @@ import { Article } from '../../../models/article.interface';
   styleUrl: './blog-control-center.component.css',
 })
 export class BlogControlCenterComponent {
-  articles: Article[] = [];
+  articles: Article[] = [
+    {
+      id: 1,
+      title: 'Mon premier article',
+      content: 'Ceci est le contenu de mon premier article.',
+      author: 'Auteur 1',
+      date: new Date('2023-01-01'),
+      type: 'article',
+    },
+    {
+      id: 2,
+      title: 'Mon deuxième article',
+      content: 'Ceci est le contenu de mon deuxième article.',
+      author: 'Auteur 2',
+      date: new Date('2023-02-01'),
+      type: 'brouillon',
+    },
+  ];
   drafts: Article[] = [];
-
-  constructor(public BlogService: BlogService) {
-    this.initRessources();
-  }
-
-  initRessources() {
-    this.articles = this.BlogService.articles;
-    this.drafts = this.BlogService.drafts;
-    console.log(this.articles);
-  }
 
   onArticleAdded(articleData: { article: Article }) {
     const document = articleData.article;
-    /*     document.type === 'article'
-      ? this.BlogService.addArticle(document)
-      : this.BlogService.addDraft(document); */
-    /* 
-    this.initRessources(); */
+
     document.type === 'article'
       ? this.articles.push(document)
       : this.drafts.push(document);
