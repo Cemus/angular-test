@@ -2,18 +2,20 @@
   {{ details ? "Masquer détail" : "Afficher détails" }}
 </button>
 <br />
-<div *ngIf="details; else hidden">
-  <p
-    *ngFor="let cell of array"
-    [ngStyle]="
-      cell > 4
-        ? { backgroundColor: 'aquamarine' }
-        : { backgroundColor: 'white' }
-    "
-    [ngClass]="{ classOn: cell > 4 }"
-  >
-    {{ cell }}
+<div *ngIf="details">
+  <p>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. At ipsam dolorum
+    dignissimos corrupti harum itaque sit quas ab dolore pariatur, totam veniam
+    incidunt suscipit obcaecati saepe, delectus perferendis consectetur impedit!
   </p>
 </div>
-<ng-template #hidden> </ng-template>
+<p
+  *ngFor="let cell of array"
+  [ngStyle]="
+    cell > 4 ? { backgroundColor: 'aquamarine' } : { backgroundColor: 'white' }
+  "
+  [ngClass]="{ classOn: cell > 4 }"
+>
+  {{ cell }}
+</p>
 <br />
