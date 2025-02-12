@@ -35,6 +35,8 @@
     ></textarea>
   </div>
 
-  <button type="button" (click)="addArticle()">Ajouter article</button>
-  <button (click)="addDraft()">AjouterBrouillon</button>
+  <button type="button" (click)="addDocument('article')">
+    Ajouter article
+  </button>
+  <button (click)="addDocument('draft')">AjouterBrouillon</button>
 </form>

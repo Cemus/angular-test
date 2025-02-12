@@ -16,25 +16,22 @@ export class AddArticleComponent {
   title: string = '';
   content: string = '';
 
-  createDocument() {
+  createDocument(type: 'article' | 'draft') {
     return {
       id: 0,
       author: this.author,
       title: this.title,
       content: this.content,
-      type: 'draft',
+      type: type,
       date: new Date(),
     };
   }
 
-  addArticle() {
-    const newArticle: Article = this.createDocument();
-    console.log(newArticle);
+  addDocument(type: string) {
+    const newArticle: Article =
+      type === 'article'
+        ? this.createDocument('article')
+        : this.createDocument('draft');
     this.articleCreated.emit({ article: newArticle });
-  }
-
-  addDraft() {
-    const newDraft: Article = this.createDocument();
-    this.articleCreated.emit({ article: newDraft });
   }
 }
