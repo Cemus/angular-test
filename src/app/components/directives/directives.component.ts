@@ -12,14 +12,13 @@ export class DirectivesComponent {
   array: number[] = [];
 
   toggleDetails(): void {
+    if (this.details) {
+      this.addCell();
+    }
     this.details = !this.details;
   }
 
   addCell(): void {
     this.array.push(this.array.length + 1);
-  }
-
-  resetArray(): void {
-    this.array = [];
   }
 }

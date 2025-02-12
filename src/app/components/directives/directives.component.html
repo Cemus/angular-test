@@ -1,7 +1,6 @@
 <button (click)="toggleDetails()">
   {{ details ? "Masquer détail" : "Afficher détails" }}
 </button>
-<button (click)="addCell()">Ajouter Element</button>
 <br />
 <div *ngIf="details; else hidden">
   <p
@@ -20,4 +19,3 @@
   <p>Les détails sont masqués</p>
 </ng-template>
 <br />
-<button (click)="resetArray()">Reset</button>
