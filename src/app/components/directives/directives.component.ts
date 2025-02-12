@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './directives.component.css',
 })
 export class DirectivesComponent {
-  details: boolean = true;
+  details: boolean = false;
   array: number[] = [];
 
   toggleDetails(): void {
