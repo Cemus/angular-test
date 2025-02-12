@@ -1,0 +1,23 @@
+<button (click)="toggleDetails()">
+  {{ details ? "Masquer détail" : "Afficher détails" }}
+</button>
+<button (click)="addCell()">Ajouter Element</button>
+<br />
+<div *ngIf="details; else hidden">
+  <p
+    *ngFor="let cell of array"
+    [ngStyle]="
+      cell > 4
+        ? { backgroundColor: 'aquamarine' }
+        : { backgroundColor: 'white' }
+    "
+    [ngClass]="{ classOn: cell > 4 }"
+  >
+    {{ cell }}
+  </p>
+</div>
+<ng-template #hidden>
+  <p>Les détails sont masqués</p>
+</ng-template>
+<br />
+<button (click)="resetArray()">Reset</button>

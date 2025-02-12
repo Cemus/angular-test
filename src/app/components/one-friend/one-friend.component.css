@@ -9,6 +9,7 @@ section {
   box-shadow: 1em 1em #f0acf0;
   margin: 1rem;
   min-width: 12vw;
+  max-width: 20vw;
 }
 
 img {
@@ -19,5 +20,5 @@ img {
   color: #80ef80;
 }
 .amiOff {
-  color: violet;
+  color: #f2f0ef;
 }

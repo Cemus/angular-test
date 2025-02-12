@@ -18,6 +18,6 @@ export class OneFriendComponent implements OnInit {
   }
 
   getColor() {
-    return this.friend.online === true ? 'green' : 'red';
+    return this.friend.online === true ? '#80ef80' : '#ff746c';
   }
 }

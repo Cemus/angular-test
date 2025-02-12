@@ -3,7 +3,7 @@ export interface Friend {
   online: boolean;
   bio: string;
   passions: string[];
-  reputation: string;
+  fame: number;
   age: number;
   imageUrl: string;
 }

@@ -16,38 +16,47 @@ export class PeopleService {
     'Sophia',
   ];
   friends: Friend[] = [
-    {
-      name: 'Jean',
-      online: true,
-      bio: 'Blablablablablabla',
-      passions: ['Ballon rond', 'Jeu de rôle japonais', 'La lessive'],
-      reputation: 'Cool',
-      age: 22,
-      imageUrl: `https://picsum.photos/200`,
-    },
-    {
-      name: 'Vanessa',
-      online: true,
-      bio: 'Blablablablablabla',
-      passions: ['Les chiens', 'Les chats', 'Les rats'],
-      reputation: 'Sereine',
-      age: 19,
-      imageUrl: `https://picsum.photos/456/`,
-    },
-    {
-      name: 'Paul',
-      online: true,
-      bio: 'Blablablablablabla',
-      passions: ['La tarte', 'Les bardes', 'Les barques'],
-      reputation: 'Dur',
-      age: 44,
-      imageUrl: `https://picsum.photos/789`,
-    },
+    this.generatePeople(),
+    this.generatePeople(),
+    this.generatePeople(),
   ];
   strangers: Friend[] = [];
-  constructor() {}
 
-  generateFirstname() {}
+  generatePeople() {
+    const gender = this.generateGender();
+    const firstname = this.generateFirstname(gender);
+    const passions = this.generatePassions();
+    const bio = this.generateBio(gender, passions);
+    const age = this.generateAge();
+    const fame = this.generateFame();
+    const imageUrl = `https://picsum.photos/${Math.floor(
+      Math.random() * 500
+    )}/`;
+
+    return {
+      name: firstname,
+      online: true,
+      bio: bio,
+      passions: passions,
+      fame: fame,
+      age: age,
+      imageUrl: imageUrl,
+    };
+  }
+
+  generateAge() {
+    return Math.floor(Math.random() * (82 - 18 + 1)) + 18;
+  }
+
+  generateFame() {
+    return Math.floor(Math.random() * 100);
+  }
+
+  generateFirstname(gender: string) {
+    const names =
+      gender === 'Homme' ? this.maleFirstnames : this.femaleFirstnames;
+    return names[Math.floor(Math.random() * names.length)];
+  }
 
   generateGender() {
     return Math.random() > 0.5 ? 'Homme' : 'Femme';
@@ -57,11 +66,17 @@ export class PeopleService {
     const pronoun = gender === 'Homme' ? 'un' : 'une';
     return `Je suis ${pronoun} grand${
       gender === 'Homme' ? '' : 'e'
-    } fan de ${passions[0].toLocaleLowerCase()} et de ${passions[1].toLocaleLowerCase()}. J'aimerais rencontrer quelqu'un qui apprécie ${passions[2].toLocaleLowerCase()}`;
+    } fan de ${passions[0].toLocaleLowerCase()}. ${
+      passions[1]
+        ? "J'aimerais rencontrer quelqu'un qui apprécie aussi tout ce qui est " +
+          passions[1].toLocaleLowerCase()
+        : ''
+    }`;
   }
 
-  generatePassion() {
-    return [
+  generatePassions() {
+    const passions: string[] = [];
+    const allPassions: string[] = [
       'Balade à vélo',
       'Balade en voiture',
       'Balade à cheval',
@@ -75,16 +90,25 @@ export class PeopleService {
       'La planche à voile',
       'La cuisine',
     ];
+
+    const passionNumber: number = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
+    for (let index = 0; index < passionNumber; index++) {
+      const passion = allPassions[index];
+      passions.push(passion);
+    }
+    return passions;
   }
 
   add(name: string): void {
+    const passions = this.generatePassions();
+    console.log(passions);
     this.friends.push({
       name: name,
       online: true,
-      bio: 'Blablablablablabla',
-      passions: ['Le néant'],
-      reputation: 'Sereine',
-      age: 24,
+      bio: this.generateBio(this.generateGender(), passions),
+      passions: passions,
+      fame: this.generateFame(),
+      age: this.generateAge(),
       imageUrl: `https://picsum.photos/456/`,
     });
   }
