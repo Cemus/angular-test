@@ -1,5 +1,15 @@
 #!/bin/bash
 
+echo -e "1) Commit\n2) Commit & Deploy" 
+
+read choix
+
+if [ "$choix" -ne 1 ] && [ "$choix" -ne 2 ]
+then
+    echo "Le choix n'a point été compris"
+    exit 1
+fi
+
 read -p 'Entrez un commentaire : ' commentaire
 
 if [ -z "$commentaire" ]
@@ -19,10 +29,15 @@ fi
 
 git push
 
-if [ $? -eq 0 ]
+if [ "$choix" -eq 2 ]
 then
-    npm run gbd
+    if [ $? -eq 0 ]
+    then
+        npm run gbd
+    else
+        echo "Erreur lors du push, build et déploiement non exécutés."
+        exit 1
+    fi
 else
-    echo "Erreur lors du push, build et déploiement non exécutés."
-    exit 1
+    exit
 fi
