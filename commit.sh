@@ -32,7 +32,7 @@ then
     git push
 fi
 
-if [ "$choix" -eq 2 ] -o [ "$choix" -eq 3 ]
+if [ "$choix" -eq 2 ] || [ "$choix" -eq 3 ]
 then
     if [ $? -eq 0 ]
     then
