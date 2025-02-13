@@ -11,6 +11,7 @@ import { FirebaseComponent } from './components/firebase/firebase.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { AuthGuardService } from './services/auth/auth-guard.service';
+import { ComponentCommunicationComponent } from './components/tp-component-comunication/component-communication/component-communication.component';
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -27,9 +28,6 @@ export const routes: Routes = [
   { path: 'api', component: ApiComponent },
   { path: 'firebase', component: FirebaseComponent },
   { path: 'app-login', component: LoginPageComponent },
-  {
-    path: 'app-register',
-
-    component: RegisterPageComponent,
-  },
+  { path: 'app-register', component: RegisterPageComponent },
+  { path: 'component-com', component: ComponentCommunicationComponent },
 ];

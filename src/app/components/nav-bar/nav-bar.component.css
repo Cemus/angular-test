@@ -6,4 +6,10 @@ ul {
 button {
   margin-inline: 1rem;
   cursor: pointer;
+  border: none;
+  background-color: orange;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  color: white;
+  font-weight: bold;
 }

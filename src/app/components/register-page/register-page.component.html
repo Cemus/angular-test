@@ -1,15 +1,17 @@
-<h2>Register</h2>
+<div>
+  <h2>Register</h2>
 
-<form action="">
-  <label for="email">Email</label>
-  <input type="email" name="email" [(ngModel)]="email" />
+  <form action="">
+    <label for="email">Email</label>
+    <input type="email" name="email" [(ngModel)]="email" />
 
-  <label for="password">Password</label>
-  <input type="password" name="password" [(ngModel)]="password" />
+    <label for="password">Password</label>
+    <input type="password" name="password" [(ngModel)]="password" />
 
-  <button type="button" (click)="signUp()">S'inscrire</button>
-</form>
+    <button type="button" (click)="signUp()">S'inscrire</button>
+  </form>
 
-<div *ngIf="user">
-  <p>Utilisateur inscrit: {{ user.email }}</p>
+  <div *ngIf="user">
+    <p>Utilisateur inscrit: {{ user.email }}</p>
+  </div>
 </div>

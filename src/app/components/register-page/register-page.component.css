@@ -9,3 +9,10 @@ form {
 button {
   margin-block: 2rem;
 }
+
+div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 2rem;
+}
