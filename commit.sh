@@ -23,6 +23,6 @@ if [ $? -eq 0 ]
 then
     npm run gbd
 else
-    echo "Échec du push, build et déploiement non exécutés."
+    echo "Erreur lors du push, build et déploiement non exécutés."
     exit 1
 fi
