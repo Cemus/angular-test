@@ -7,7 +7,7 @@ import { InterpolationComponent } from './components/interpolation/interpolation
 import { DirectivesComponent } from './components/directives/directives.component';
 import { BlogControlCenterComponent } from './components/blog/blog-control-center/blog-control-center.component';
 import { ApiComponent } from './components/api/api.component';
-import { FirebaseComponent } from './firebase/firebase.component';
+import { FirebaseComponent } from './components/firebase/firebase.component';
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
