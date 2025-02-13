@@ -8,10 +8,17 @@ import { DirectivesComponent } from './components/directives/directives.componen
 import { BlogControlCenterComponent } from './components/blog/blog-control-center/blog-control-center.component';
 import { ApiComponent } from './components/api/api.component';
 import { FirebaseComponent } from './components/firebase/firebase.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { RegisterPageComponent } from './components/register-page/register-page.component';
+import { AuthGuardService } from './services/auth/auth-guard.service';
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'exercises', component: ExercisesComponent },
+  {
+    path: 'exercises',
+    canActivate: [AuthGuardService],
+    component: ExercisesComponent,
+  },
   { path: 'nesting', component: Composant0Component },
   { path: 'interpolation', component: InterpolationComponent },
   { path: 'data-binding', component: DataBindingComponent },
@@ -19,4 +26,10 @@ export const routes: Routes = [
   { path: 'blog', component: BlogControlCenterComponent },
   { path: 'api', component: ApiComponent },
   { path: 'firebase', component: FirebaseComponent },
+  { path: 'app-login', component: LoginPageComponent },
+  {
+    path: 'app-register',
+
+    component: RegisterPageComponent,
+  },
 ];
