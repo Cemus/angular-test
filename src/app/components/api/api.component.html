@@ -1,0 +1,7 @@
+<p *ngIf="isLoading; else render">Now loading...</p>
+
+<ng-template #render>
+  <article>
+    <app-card *ngFor="let card of cards" [card]="card"></app-card>
+  </article>
+</ng-template>

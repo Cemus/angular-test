@@ -6,6 +6,7 @@ import { Composant0Component } from './components/nesting/composant-0/composant-
 import { InterpolationComponent } from './components/interpolation/interpolation.component';
 import { DirectivesComponent } from './components/directives/directives.component';
 import { BlogControlCenterComponent } from './components/blog/blog-control-center/blog-control-center.component';
+import { ApiComponent } from './components/api/api.component';
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -15,4 +16,5 @@ export const routes: Routes = [
   { path: 'data-binding', component: DataBindingComponent },
   { path: 'directives', component: DirectivesComponent },
   { path: 'blog', component: BlogControlCenterComponent },
+  { path: 'api', component: ApiComponent },
 ];
