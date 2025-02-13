@@ -25,13 +25,7 @@ export class ApiComponent {
     this.api
       .fetchCards()
       .then((data) => {
-        console.log(data);
-        this.cards = data.map((card: any) => ({
-          id: card.id,
-          name: card.name,
-          image: card.card_images[0].image_url,
-        }));
-        console.log(this.cards);
+        this.cards = this.api.formatData(data);
         this.isLoading = false;
       })
       .catch((error) => {
